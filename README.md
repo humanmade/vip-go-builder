@@ -4,6 +4,8 @@
 
 This repository handles a build process for VIP Go, wherein the source code for the site lives on the `master` branch (for production), and a built version is committed to `master-built` (ditto for other environments).
 
+Curious as to what the result looks like? This repo builds itself, check out the [master-built branch](https://github.com/humanmade/vip-go-builder/commits/master-built).
+
 
 ## Setup
 
