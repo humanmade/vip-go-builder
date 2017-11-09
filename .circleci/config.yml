@@ -15,10 +15,9 @@ jobs:
         - master
     steps:
       - checkout
-      - run:
-          name: Greeting
-          command: echo Hello, world.
+
       # Configure build steps:
+      # - run: npm install
       # - run: npm run build
       #
       # These can also be specified with a name:

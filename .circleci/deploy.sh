@@ -3,8 +3,11 @@
 # Deploy your branch on VIP Go.
 #
 
-BRANCH="${CIRCLE_BRANCH}"
 DEPLOY_SUFFIX="${DEPLOY_SUFFIX:--built}"
+GIT_USER="${DEPLOY_GIT_USER:-CircleCI}"
+GIT_EMAIL="${DEPLOY_GIT_EMAIL:-ryan+circle-vip-go@hmn.md}"
+
+BRANCH="${CIRCLE_BRANCH}"
 SRC_DIR="$PWD"
 BUILD_DIR="/tmp/vip-go-build"
 
@@ -64,8 +67,8 @@ git status -s
 
 # Double-check our user/email config
 if ! git config user.email; then
-	git config user.name "CircleCI"
-	git config user.email "ryan+circle-vip-go@hmn.md"
+	git config user.name "$GIT_USER"
+	git config user.email "$GIT_EMAIL"
 fi
 
 # Commit it.
