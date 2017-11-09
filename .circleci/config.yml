@@ -11,12 +11,21 @@ jobs:
 
     branches:
       only:
+        # Whitelist branches to build for.
         - master
     steps:
       - checkout
       - run:
           name: Greeting
           command: echo Hello, world.
+      # Configure build steps:
       # - run: npm run build
+      #
+      # These can also be specified with a name:
+      # - run:
+      #   name: Build the thing
+      #   command: npm run build-thing
+
+      # Run the deploy:
       - deploy:
           command: .circleci/deploy.sh
