@@ -31,7 +31,9 @@ if ! git rev-parse --verify "remotes/origin/$DEPLOY_BRANCH" >/dev/null 2>&1; the
 	git checkout --orphan "$DEPLOY_BRANCH"
 else
 	echo "Using existing $DEPLOY_BRANCH"
-	git worktree add "$BUILD_DIR" "$DEPLOY_BRANCH"
+	git worktree add --detach "$BUILD_DIR" "remotes/origin/$DEPLOY_BRANCH"
+	cd "$BUILD_DIR"
+	git checkout "$DEPLOY_BRANCH"
 fi
 
 # Ensure we're in the right dir
