@@ -24,14 +24,16 @@ DEPLOY_BRANCH="${BRANCH}${DEPLOY_SUFFIX}"
 echo "Deploying $BRANCH to $DEPLOY_BRANCH"
 
 # If the deploy branch doesn't already exist, create it from the empty root.
-if ! git rev-parse --verify "$DEPLOY_BRANCH" >/dev/null 2>&1; then
+if ! git rev-parse --verify "remotes/origin/$DEPLOY_BRANCH" >/dev/null 2>&1; then
 	echo -e "\nCreating $DEPLOY_BRANCH..."
 	git worktree add --detach "$BUILD_DIR"
 	cd "$BUILD_DIR"
 	git checkout --orphan "$DEPLOY_BRANCH"
 else
 	echo "Using existing $DEPLOY_BRANCH"
-	git worktree add "$BUILD_DIR" "$DEPLOY_BRANCH"
+	git worktree add --detach "$BUILD_DIR" "remotes/origin/$DEPLOY_BRANCH"
+	cd "$BUILD_DIR"
+	git checkout "$DEPLOY_BRANCH"
 fi
 
 # Ensure we're in the right dir
