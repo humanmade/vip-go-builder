@@ -42,6 +42,10 @@ git rm -rfq .
 
 # Sync built files
 echo -e "\nSyncing files..."
+if ! command -v 'rsync'; then
+	sudo apt-get install -q -y rsync
+fi
+
 rsync -av "$SRC_DIR/" "$BUILD_DIR" --exclude ".git"
 
 # Add changed files
