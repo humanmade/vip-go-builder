@@ -17,6 +17,7 @@ jobs:
       - checkout
 
       # Configure build steps:
+      # - run: npm install
       # - run: npm run build
       #
       # These can also be specified with a name:
