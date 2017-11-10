@@ -51,7 +51,7 @@ if ! command -v 'rsync'; then
 	sudo apt-get install -q -y rsync
 fi
 
-rsync -av "$SRC_DIR/" "$BUILD_DIR" --exclude ".git"
+rsync -av "$SRC_DIR/" "$BUILD_DIR" --exclude-from "$SRC_DIR/.circleci/deploy-exclude.txt"
 
 # Add changed files
 git add .

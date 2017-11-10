@@ -87,3 +87,5 @@ You can configure the build commits by setting environment variables for your bu
   Git author email.
 
   Defaults to `ryan+circle-vip-go@hmn.md`.
+
+You can also configure which files to exclude from the built branch using the `deploy-exclude.txt` file.
