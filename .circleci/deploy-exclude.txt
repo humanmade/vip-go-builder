@@ -1,5 +1,5 @@
 # Add files or patterns to exclude from the built branch here.
-# Consult the "FILTER RULES" section of the rsync manual for
+# Consult the "INCLUDE/EXCLUDE PATTERN RULES" section of the rsync manual for
 # supported patterns.
 
 .circleci
