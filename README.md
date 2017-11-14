@@ -77,7 +77,9 @@ You'll need a machine user to create builds and deploy:
 Once you have your machine user and private key ready, set up Circle for your VIP Go repository:
 
 1. Ask the VIP team to add your **machine user** to the repository with **write access**, and **you with admin access** (you'll need this temporarily to enable CircleCI on the repository)
-2. Once your user has been added, log into CircleCI using your GitHub machine user
+1. Once you have been added, log into CircleCI using your regular user
+1. Enable CircleCI for the repository (you will no longer need admin access after this step)
+2. Log out, and log into CircleCI using your GitHub machine user
 3. "Follow" the relevant repository on CircleCI
 4. Go to the Project Settings page for the project on CircleCI (Settings in top-right corner of the repo's page)
 5. Go to the "Checkout SSH keys" page
