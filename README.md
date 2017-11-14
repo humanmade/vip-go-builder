@@ -79,13 +79,13 @@ Once you have your machine user and private key ready, set up Circle for your VI
 1. Ask the VIP team to add your **machine user** to the repository with **write access**, and **you with admin access** (you'll need this temporarily to enable CircleCI on the repository)
 1. Once you have been added, log into CircleCI using your regular user
 1. Enable CircleCI for the repository (you will no longer need admin access after this step)
-2. Log out, and log into CircleCI using your GitHub machine user
-3. "Follow" the relevant repository on CircleCI
-4. Go to the Project Settings page for the project on CircleCI (Settings in top-right corner of the repo's page)
-5. Go to the "Checkout SSH keys" page
-6. Click "Authorize with GitHub" - If prompted, accept raised permissions for CircleCI
-7. Click "Create and add {user} user key"
-8. Remove the (now redundant) deploy key
+1. Log out, and log into CircleCI using your GitHub machine user
+1. "Follow" the relevant repository on CircleCI
+1. Go to the Project Settings page for the project on CircleCI (Settings in top-right corner of the repo's page)
+1. Go to the "Checkout SSH keys" page
+1. Click "Authorize with GitHub" - If prompted, accept raised permissions for CircleCI
+1. Click "Create and add {user} user key"
+1. Remove the (now redundant) deploy key
 
 
 ### Configuring Builds
